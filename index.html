@@ -21,19 +21,21 @@
         <li> <a href="./about.html" >About </a> </li>
     </ul>
 </nav>
-<section class="new-task">
-<input type="text" id="new-task-input"
- placeholder="What do you have planned?"/>
 
- <input type="submit"
- id="new-task-submit"
- value="Add task" />
-</section> 
     </header>
 
     <main>
+        
         <section class="sec">
+
         <h2>ToDo List</h2>
+        <div id="my-div" class="new-task">
+            <input type="text" id="new-task-input"
+             placeholder="What do you have planned?"/>
+            
+             <span onclick="newElement()" class="addBtn">Add</span>
+        </div> 
+
     <table>
      <tr>
         <th>Tasks</th>
@@ -41,15 +43,15 @@
     </tr>
      <tr>
         <td>Attend the JS lecture</td>
-        <td></td>
+        <td>Done</td>
     </tr>
     <tr>
         <td>solve the assignment</td>
-        <td></td>
+        <td>Done</td>
     </tr>
     <tr>
         <td>Attend the English 01 lecture</td>
-        <td></td>
+        <td>canceled</td>
     </tr>
     </table>
  </section>
