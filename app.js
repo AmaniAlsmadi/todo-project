@@ -1,4 +1,5 @@
 'use strict'
+const answerArray = [];
 
 let userName =prompt("What is your name?");
 console.log(userName);
@@ -7,9 +8,9 @@ console.log(userName);
 let gender =prompt("What is your gender?");
 console.log(gender);
 
-if(gender == "female"){
+if(gender.toLowerCase() == "female"){
     gender="Ms";
-}else if (gender == "male"){
+}else if (gender.toLowerCase() == "male"){
     gender="Mr";
 }else {
     gender="";
@@ -22,23 +23,33 @@ if (age <= 0){
 };
 
 let welcomeMsg = confirm("Do you wants to skip the welome message?");
-if(welcomeMsg == false ){
+if(welcomeMsg === false ){
 alert( "welcome "+ gender +" "+ userName)
 };
 
-let moreQuestions = prompt("do you like to answer more questions?");
+let moreQuestions = confirm("do you like to answer more questions?");
 console.log(moreQuestions);
 let question1,question2,question3;
-if(moreQuestions == ""){
-    alert("invalid");
-}else {
-    question1 = confirm("Do you like our wibsite?");
-    question2 = confirm("Do you like js?");
-    question3 = confirm("Do you want to continue?");
-} 
-console.log(question1);
-console.log(question2);
-console.log(question3);
+if(moreQuestions){
+
+     question1 = askQuestion("Do you like our wibsite?");
+     question2 = askQuestion("Do you like js?");
+     question3 = askQuestion("Do you want to continue?");
+}
+
 
 const userAnswer = [userName, gender, age, moreQuestions ,question1, question2 , question3];
 console.log(userAnswer);
+
+    //functions:
+    function askQuestion(question){
+        let qPrompt = prompt(question);
+        if(qPrompt.toLowerCase() === 'yes' || qPrompt.toLowerCase() === 'no'){
+            return qPrompt;
+         }else if (qPrompt === ""){
+            return alert("invalid");
+         }
+        
+    }
+
+   
